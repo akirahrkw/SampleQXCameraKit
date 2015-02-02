@@ -128,12 +128,12 @@ class CameraViewController: UIViewController, UIActionSheetDelegate {
     // MARK: - Callback
     func didTapLongPressedZoomIn(gestureRecognizer:UILongPressGestureRecognizer) {
         switch(gestureRecognizer.state){
-            case UIGestureRecognizerState.Began:
+            case .Began:
                 self.manager.api?.startZoomIn({ [unowned self] (json:NSDictionary, isSucceeded:Bool) in
                     NSLog("%@", json)
                 })
                 break
-            case UIGestureRecognizerState.Ended:
+            case .Ended:
                 self.manager.api?.stopZoomIn({ [unowned self] (json:NSDictionary, isSucceeded:Bool) in
                     NSLog("%@", json)
                 })
@@ -145,12 +145,12 @@ class CameraViewController: UIViewController, UIActionSheetDelegate {
 
     func didTapLongPressedZoomOut(gestureRecognizer:UILongPressGestureRecognizer) {
         switch(gestureRecognizer.state){
-        case UIGestureRecognizerState.Began:
+        case .Began:
             self.manager.api?.startZoomOut({ [unowned self] (json:NSDictionary, isSucceeded:Bool) in
                 NSLog("%@", json)
             })
             break
-        case UIGestureRecognizerState.Ended:
+        case .Ended:
             self.manager.api?.stopZoomOut({ [unowned self] (json:NSDictionary, isSucceeded:Bool) in
                 NSLog("%@", json)
             })

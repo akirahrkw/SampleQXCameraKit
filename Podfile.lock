@@ -1,0 +1,19 @@
+PODS:
+  - QXCameraKit (0.0.1)
+
+DEPENDENCIES:
+  - QXCameraKit (from `https://github.com/akirahrkw/QXCameraKit.git`)
+
+EXTERNAL SOURCES:
+  QXCameraKit:
+    :git: https://github.com/akirahrkw/QXCameraKit.git
+
+CHECKOUT OPTIONS:
+  QXCameraKit:
+    :commit: b9716e6f1ac50810b614d97b1aa5eef1dcd4a333
+    :git: https://github.com/akirahrkw/QXCameraKit.git
+
+SPEC CHECKSUMS:
+  QXCameraKit: 0903587a9ed76b34c692193e3ced7f89f77d8f9f
+
+COCOAPODS: 0.35.0

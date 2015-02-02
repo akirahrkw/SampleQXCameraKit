@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BCDB6F3B5AEFAFB566662E9 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA539352A51FBCAC019FCD73 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8EAF15771A41B8FA0085131C /* AFTouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAF15761A41B8FA0085131C /* AFTouchView.swift */; };
 		8EEA9AD71A3DA056007B87DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA9AD61A3DA056007B87DA /* AppDelegate.swift */; };
 		8EEA9ADE1A3DA056007B87DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EEA9ADD1A3DA056007B87DA /* Images.xcassets */; };
 		8EEA9AE11A3DA056007B87DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EEA9ADF1A3DA056007B87DA /* LaunchScreen.xib */; };
 		8EEA9AED1A3DA056007B87DA /* SampleQXCameraKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA9AEC1A3DA056007B87DA /* SampleQXCameraKitTests.swift */; };
-		8EEA9B041A3DA0A0007B87DA /* QXCameraKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EEA9AFC1A3DA05E007B87DA /* QXCameraKit.framework */; };
-		8EEA9B071A3DA0C9007B87DA /* QXCameraKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8EEA9AFC1A3DA05E007B87DA /* QXCameraKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8EEA9B0A1A3DA17F007B87DA /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA9B081A3DA17F007B87DA /* CameraViewController.swift */; };
 		8EEA9B0B1A3DA17F007B87DA /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EEA9B091A3DA17F007B87DA /* CameraViewController.xib */; };
 /* End PBXBuildFile section */
@@ -26,27 +25,6 @@
 			remoteGlobalIDString = 8EEA9AD01A3DA056007B87DA;
 			remoteInfo = SampleQXCameraKit;
 		};
-		8EEA9AFB1A3DA05E007B87DA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8EEA9AF61A3DA05E007B87DA /* QXCameraKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8E0945051A10B6BD00EC0553;
-			remoteInfo = QXCameraKit;
-		};
-		8EEA9AFD1A3DA05E007B87DA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8EEA9AF61A3DA05E007B87DA /* QXCameraKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8E0945101A10B6BD00EC0553;
-			remoteInfo = QXCameraKitTests;
-		};
-		8EEA9B021A3DA093007B87DA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8EEA9AF61A3DA05E007B87DA /* QXCameraKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8E0945041A10B6BD00EC0553;
-			remoteInfo = QXCameraKit;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,13 +34,14 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8EEA9B071A3DA0C9007B87DA /* QXCameraKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3D2D3942C345DAAD0ACE678F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		4B8FD718ED39CB4137993270 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8EAF15761A41B8FA0085131C /* AFTouchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFTouchView.swift; sourceTree = "<group>"; };
 		8EEA9AD11A3DA056007B87DA /* SampleQXCameraKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleQXCameraKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EEA9AD51A3DA056007B87DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,10 +51,10 @@
 		8EEA9AE61A3DA056007B87DA /* SampleQXCameraKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleQXCameraKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EEA9AEB1A3DA056007B87DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EEA9AEC1A3DA056007B87DA /* SampleQXCameraKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleQXCameraKitTests.swift; sourceTree = "<group>"; };
-		8EEA9AF61A3DA05E007B87DA /* QXCameraKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QXCameraKit.xcodeproj; path = ../QXCameraKit/QXCameraKit.xcodeproj; sourceTree = "<group>"; };
 		8EEA9B081A3DA17F007B87DA /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		8EEA9B091A3DA17F007B87DA /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraViewController.xib; sourceTree = "<group>"; };
 		8EFE8F721A457DCE0040767F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		DA539352A51FBCAC019FCD73 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EEA9B041A3DA0A0007B87DA /* QXCameraKit.framework in Frameworks */,
+				2BCDB6F3B5AEFAFB566662E9 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,13 +76,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46C6717DA8D1FEB648F5463A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA539352A51FBCAC019FCD73 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8EEA9AC81A3DA056007B87DA = {
 			isa = PBXGroup;
 			children = (
-				8EEA9AF61A3DA05E007B87DA /* QXCameraKit.xcodeproj */,
 				8EEA9AD31A3DA056007B87DA /* SampleQXCameraKit */,
 				8EEA9AE91A3DA056007B87DA /* SampleQXCameraKitTests */,
 				8EEA9AD21A3DA056007B87DA /* Products */,
+				B60FB865764E1611F2DBEEE9 /* Pods */,
+				46C6717DA8D1FEB648F5463A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,13 +144,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		8EEA9AF71A3DA05E007B87DA /* Products */ = {
+		B60FB865764E1611F2DBEEE9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8EEA9AFC1A3DA05E007B87DA /* QXCameraKit.framework */,
-				8EEA9AFE1A3DA05E007B87DA /* QXCameraKitTests.xctest */,
+				3D2D3942C345DAAD0ACE678F /* Pods.debug.xcconfig */,
+				4B8FD718ED39CB4137993270 /* Pods.release.xcconfig */,
 			);
-			name = Products;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,15 +160,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8EEA9AF01A3DA056007B87DA /* Build configuration list for PBXNativeTarget "SampleQXCameraKit" */;
 			buildPhases = (
+				A149CE390A2834ABEFDE3744 /* Check Pods Manifest.lock */,
 				8EEA9ACD1A3DA056007B87DA /* Sources */,
 				8EEA9ACE1A3DA056007B87DA /* Frameworks */,
 				8EEA9ACF1A3DA056007B87DA /* Resources */,
 				8EEA9B051A3DA0AD007B87DA /* CopyFiles */,
+				7303881666139F60E37ABE10 /* Copy Pods Resources */,
+				485314963DF804DA8C21436F /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8EEA9B031A3DA093007B87DA /* PBXTargetDependency */,
 			);
 			name = SampleQXCameraKit;
 			productName = SampleQXCameraKit;
@@ -234,12 +224,6 @@
 			mainGroup = 8EEA9AC81A3DA056007B87DA;
 			productRefGroup = 8EEA9AD21A3DA056007B87DA /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 8EEA9AF71A3DA05E007B87DA /* Products */;
-					ProjectRef = 8EEA9AF61A3DA05E007B87DA /* QXCameraKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				8EEA9AD01A3DA056007B87DA /* SampleQXCameraKit */,
@@ -247,23 +231,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		8EEA9AFC1A3DA05E007B87DA /* QXCameraKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = QXCameraKit.framework;
-			remoteRef = 8EEA9AFB1A3DA05E007B87DA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8EEA9AFE1A3DA05E007B87DA /* QXCameraKitTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = QXCameraKitTests.xctest;
-			remoteRef = 8EEA9AFD1A3DA05E007B87DA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8EEA9ACF1A3DA056007B87DA /* Resources */ = {
@@ -284,6 +251,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		485314963DF804DA8C21436F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7303881666139F60E37ABE10 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A149CE390A2834ABEFDE3744 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8EEA9ACD1A3DA056007B87DA /* Sources */ = {
@@ -311,11 +326,6 @@
 			isa = PBXTargetDependency;
 			target = 8EEA9AD01A3DA056007B87DA /* SampleQXCameraKit */;
 			targetProxy = 8EEA9AE71A3DA056007B87DA /* PBXContainerItemProxy */;
-		};
-		8EEA9B031A3DA093007B87DA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = QXCameraKit;
-			targetProxy = 8EEA9B021A3DA093007B87DA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -410,23 +420,29 @@
 		};
 		8EEA9AF11A3DA056007B87DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D2D3942C345DAAD0ACE678F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SampleQXCameraKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../QXCameraKit";
+				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
 		8EEA9AF21A3DA056007B87DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B8FD718ED39CB4137993270 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SampleQXCameraKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../QXCameraKit";
+				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
