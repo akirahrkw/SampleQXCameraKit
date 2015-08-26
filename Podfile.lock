@@ -1,19 +1,20 @@
 PODS:
-  - QXCameraKit (0.0.1)
+  - QXCameraKit (0.1.0)
 
 DEPENDENCIES:
-  - QXCameraKit (from `https://github.com/akirahrkw/QXCameraKit.git`)
+  - QXCameraKit (from `https://github.com/akirahrkw/QXCameraKit.git`, branch `swift2`)
 
 EXTERNAL SOURCES:
   QXCameraKit:
+    :branch: swift2
     :git: https://github.com/akirahrkw/QXCameraKit.git
 
 CHECKOUT OPTIONS:
   QXCameraKit:
-    :commit: b9716e6f1ac50810b614d97b1aa5eef1dcd4a333
+    :commit: 2bb0f68bacd651983d700b1dc4b99169be2f4d98
     :git: https://github.com/akirahrkw/QXCameraKit.git
 
 SPEC CHECKSUMS:
-  QXCameraKit: 0903587a9ed76b34c692193e3ced7f89f77d8f9f
+  QXCameraKit: 4e728d5556bc8709487ba9c6f50c695b0a9a8bf7
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.38.2

@@ -14,9 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        var controller = CameraViewController()
+        let controller = CameraViewController()
 
-        var nav = UINavigationController(rootViewController:controller)
+        let nav = UINavigationController(rootViewController:controller)
         nav.navigationBar.barStyle = UIBarStyle.Black
         nav.view.backgroundColor = UIColor.whiteColor()
         nav.navigationBar.tintColor = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)

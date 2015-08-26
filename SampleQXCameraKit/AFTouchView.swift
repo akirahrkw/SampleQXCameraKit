@@ -17,13 +17,13 @@ class AFTouchView: UIView {
     
     override func awakeFromNib() {
         self.isTapLongPressed = false
-        var gesture = UILongPressGestureRecognizer(target:self, action:"didTapLongPressed:")
+        let gesture = UILongPressGestureRecognizer(target:self, action:"didTapLongPressed:")
         
         self.addGestureRecognizer(gesture)
     }
     
     func didTapLongPressed(gestureRecognizer:UILongPressGestureRecognizer) {
-        
+
         if (gestureRecognizer.state == UIGestureRecognizerState.Began) {
             if(self.isTapLongPressed!) {
                 self.isTapLongPressed = true
@@ -40,20 +40,19 @@ class AFTouchView: UIView {
         }
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-    
-        var point = (touches.anyObject() as UITouch).locationInView(self)
-        
-        var base = UIScreen.mainScreen().bounds.size.width
-        
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+
+        let point = touches.first!.locationInView(self)
+        let base = UIScreen.mainScreen().bounds.size.width
+
         // in this view
         var x:CGFloat = point.x / base;
         var y:CGFloat = point.y / base;
         
         // in live view
-        var baseWidth:CGFloat = 480.0;
-        var liveX:CGFloat = 480.0;
-        var liveY:CGFloat = 640.0;
+        let baseWidth:CGFloat = 480.0;
+        let liveX:CGFloat = 480.0;
+        let liveY:CGFloat = 640.0;
         
         x = ((x * baseWidth) +  0) / liveX * 100;
         y = ((y * baseWidth) + 80) / liveY * 100;

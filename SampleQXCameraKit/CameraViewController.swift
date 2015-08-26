@@ -25,11 +25,11 @@ class CameraViewController: UIViewController, UIActionSheetDelegate {
     
     var options:NSArray?
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override init(){
+    init(){
         manager = QXAPIManager()
         isCameraMode = false
         super.init(nibName:"CameraViewController", bundle:nil)
@@ -41,15 +41,15 @@ class CameraViewController: UIViewController, UIActionSheetDelegate {
         self.liveImageView!.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2));
         self.touchView!.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2));
         
-        var btn = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.Camera, target:self, action:"changeIsoSpeed:")
+        let btn = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.Camera, target:self, action:"changeIsoSpeed:")
         self.navigationItem.leftBarButtonItem = btn
     }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
-        var gestureZoomIn = UILongPressGestureRecognizer(target:self, action:"didTapLongPressedZoomIn:")
-        var gestureZoomOut = UILongPressGestureRecognizer(target:self, action:"didTapLongPressedZoomOut:")
+        let gestureZoomIn = UILongPressGestureRecognizer(target:self, action:"didTapLongPressedZoomIn:")
+        let gestureZoomOut = UILongPressGestureRecognizer(target:self, action:"didTapLongPressedZoomOut:")
         self.zoomInButton?.addGestureRecognizer(gestureZoomIn)
         self.zoomOutButton?.addGestureRecognizer(gestureZoomOut)
         
@@ -60,7 +60,7 @@ class CameraViewController: UIViewController, UIActionSheetDelegate {
 
         self.manager.takePicture({ [unowned self] (json:NSDictionary, isSucceeded:Bool) in
             
-            var image = self.manager.didTakePicture(json) as UIImage?
+            let image = self.manager.didTakePicture(json) as UIImage?
             if(image == nil) {
                 return
             }
@@ -68,28 +68,28 @@ class CameraViewController: UIViewController, UIActionSheetDelegate {
             var height = CGImageGetHeight(image!.CGImage)
             var width = CGImageGetWidth(image!.CGImage)
 
-            var x = CGFloat((width - height) / 2)
-            var cropRect = CGRectMake( x, 0, 1080, 1080)
+            let x = CGFloat((width - height) / 2)
+            let cropRect = CGRectMake( x, 0, 1080, 1080)
         
-            var imageRef = CGImageCreateWithImageInRect(image!.CGImage, cropRect)
-            var croppedImage = UIImage(CGImage:imageRef)
+            let imageRef = CGImageCreateWithImageInRect(image!.CGImage, cropRect)
+            let croppedImage = UIImage(CGImage:imageRef!)
             
             
-            width = CGImageGetWidth(croppedImage!.CGImage)
-            height = CGImageGetHeight(croppedImage!.CGImage)
+            width = CGImageGetWidth(croppedImage.CGImage)
+            height = CGImageGetHeight(croppedImage.CGImage)
             
-            var clockwise = false
-            var size = croppedImage!.size
+            let clockwise = false
+            let size = croppedImage.size
             
             UIGraphicsBeginImageContext(CGSizeMake(size.height, size.width))
             
-            var orientation = clockwise ? UIImageOrientation.Right : UIImageOrientation.Left
+            let orientation = clockwise ? UIImageOrientation.Right : UIImageOrientation.Left
             
-            var newImage = UIImage(CGImage:croppedImage!.CGImage, scale:1.0, orientation:orientation)
+            let newImage = UIImage(CGImage:croppedImage.CGImage!, scale:1.0, orientation:orientation)
             
-            newImage?.drawInRect(CGRectMake(0,0,size.height ,size.width))
+            newImage.drawInRect(CGRectMake(0,0,size.height ,size.width))
             
-            var rotatedImage = UIGraphicsGetImageFromCurrentImageContext();
+            let rotatedImage = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
             
             UIImageWriteToSavedPhotosAlbum(rotatedImage,nil,nil,nil);
@@ -102,14 +102,14 @@ class CameraViewController: UIViewController, UIActionSheetDelegate {
             if(result) {
                 self.manager.startLiveImage({ [unowned self] (image:UIImage, error:NSError?) -> () in
                   
-                    var height = CGImageGetHeight(image.CGImage)
-                    var width = CGImageGetWidth(image.CGImage)
+                    let height = CGImageGetHeight(image.CGImage)
+                    let width = CGImageGetWidth(image.CGImage)
                     
-                    var x = CGFloat((width - height) / 2)
-                    var cropRect = CGRectMake(x, 0, 480, 480)
+                    let x = CGFloat((width - height) / 2)
+                    let cropRect = CGRectMake(x, 0, 480, 480)
                     
-                    var imageRef = CGImageCreateWithImageInRect(image.CGImage, cropRect)
-                    var croppedImage = UIImage(CGImage:imageRef)
+                    let imageRef = CGImageCreateWithImageInRect(image.CGImage, cropRect)
+                    let croppedImage = UIImage(CGImage:imageRef!)
                     
                     self.synchronized(self) {
                         dispatch_async(dispatch_get_main_queue(), {
@@ -119,7 +119,7 @@ class CameraViewController: UIViewController, UIActionSheetDelegate {
                 })
             }
             else {
-                var alertView = UIAlertView(title:"failed to connect", message:nil, delegate:nil, cancelButtonTitle:"OK")
+                let alertView = UIAlertView(title:"failed to connect", message:nil, delegate:nil, cancelButtonTitle:"OK")
                 alertView.show()
             }
         })
@@ -129,12 +129,12 @@ class CameraViewController: UIViewController, UIActionSheetDelegate {
     func didTapLongPressedZoomIn(gestureRecognizer:UILongPressGestureRecognizer) {
         switch(gestureRecognizer.state){
             case .Began:
-                self.manager.api?.startZoomIn({ [unowned self] (json:NSDictionary, isSucceeded:Bool) in
+                self.manager.api?.startZoomIn({(json:NSDictionary, isSucceeded:Bool) in
                     NSLog("%@", json)
                 })
                 break
             case .Ended:
-                self.manager.api?.stopZoomIn({ [unowned self] (json:NSDictionary, isSucceeded:Bool) in
+                self.manager.api?.stopZoomIn({(json:NSDictionary, isSucceeded:Bool) in
                     NSLog("%@", json)
                 })
                 break
@@ -146,12 +146,12 @@ class CameraViewController: UIViewController, UIActionSheetDelegate {
     func didTapLongPressedZoomOut(gestureRecognizer:UILongPressGestureRecognizer) {
         switch(gestureRecognizer.state){
         case .Began:
-            self.manager.api?.startZoomOut({ [unowned self] (json:NSDictionary, isSucceeded:Bool) in
+            self.manager.api?.startZoomOut({(json:NSDictionary, isSucceeded:Bool) in
                 NSLog("%@", json)
             })
             break
         case .Ended:
-            self.manager.api?.stopZoomOut({ [unowned self] (json:NSDictionary, isSucceeded:Bool) in
+            self.manager.api?.stopZoomOut({(json:NSDictionary, isSucceeded:Bool) in
                 NSLog("%@", json)
             })
             break
@@ -166,8 +166,8 @@ class CameraViewController: UIViewController, UIActionSheetDelegate {
             self.manager.api!.getAvailableIsoSpeedRate({[unowned self] (json:NSDictionary, isSucceeded:Bool) in
                 self.isCameraMode = false;
                 NSLog("%@", json);
-                var array = json.objectForKey("result") as NSArray
-                self.showIsoSpeed(array[0] as NSString, availables:array[1] as NSArray)
+                let array = json.objectForKey("result") as! NSArray
+                self.showIsoSpeed(array[0] as! NSString, availables:array[1] as! NSArray)
             })
         }
     }
@@ -175,9 +175,9 @@ class CameraViewController: UIViewController, UIActionSheetDelegate {
     func showIsoSpeed(current:NSString, availables:NSArray) {
         self.options = availables
         
-        var sheet = UIActionSheet(title:"ISO", delegate:self, cancelButtonTitle:"Cancel", destructiveButtonTitle:nil)
+        let sheet = UIActionSheet(title:"ISO", delegate:self, cancelButtonTitle:"Cancel", destructiveButtonTitle:nil)
         for val in availables {
-            sheet.addButtonWithTitle(val as NSString)
+            sheet.addButtonWithTitle(val as! NSString as String)
         }
         sheet.showInView(self.view)
     }
